@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vocabulary Viewer</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<main class="page-shell">
+		<section class="panel">
+			<p class="eyebrow">FastAPI Vocabulary</p>
+			<h1>Vocabulary Dictionary</h1>
+			<p class="intro">Each vocabulary token is mapped to its numeric identifier and embedding vector from the API.</p>
+			<form id="encode-form" class="encode-form">
+				<label class="field-label" for="word-input">Enter a word to encode</label>
+				<div class="field-row">
+					<input id="word-input" class="word-input" name="word" type="text" placeholder="hello world" autocomplete="off" spellcheck="false">
+					<button class="encode-button" type="submit">Encode</button>
+				</div>
+				<p class="field-hint">Enter any text. The backend normalize function will replace unsupported characters before encoding.</p>
+			</form>
+			<section class="encode-result-panel" aria-live="polite">
+				<p class="result-label">Encoded output</p>
+				<div id="encode-status" class="encode-status">Enter a word to see its numeric encoding.</div>
+				<div id="encode-result" class="encode-result"></div>
+			</section>
+			<div id="status" class="status" aria-live="polite">Loading vocabulary...</div>
+			<div class="vocab-header" aria-hidden="true">
+				<span>Token</span>
+				<span>Index</span>
+				<span>Vector</span>
+			</div>
+			<div id="vocab-list" class="vocab-list" aria-live="polite"></div>
+			<section class="vector-panel" aria-live="polite">
+				<p class="result-label">Vector Plot</p>
+				<div class="field-row vector-controls">
+					<div class="vector-field">
+						<label class="field-label" for="vector-select">Choose a vocabulary character</label>
+						<select id="vector-select" class="vector-select"></select>
+					</div>
+					<div id="vector-caption" class="vector-caption">Showing the vector for space.</div>
+				</div>
+				<div id="vector-plot" class="vector-plot"></div>
+			</section>
+			<section class="vector-panel all-vectors-panel" aria-live="polite">
+				<p class="result-label">All Vocabulary Vectors</p>
+				<div id="all-vectors-caption" class="vector-caption">Showing all vocabulary vectors on one coordinate plane.</div>
+				<div id="all-vectors-plot" class="vector-plot"></div>
+			</section>
+		</section>
+	</main>
+	<script src="/script.js" defer></script>
+</body>
+</html>
