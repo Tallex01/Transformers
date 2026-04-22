@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vocab Explorer</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<main class="page">
+		<header class="hero">
+			<h1>Vocab Lookup</h1>
+			<p>Tokens map to indices, and indices map to embedding vectors.</p>
+			<button id="refreshButton" type="button">Refresh</button>
+		</header>
+
+		<section class="panel">
+			<h2>Lookup Table</h2>
+			<div class="flow-head">
+				<span>Token</span>
+				<span class="arrow">-></span>
+				<span>Index</span>
+				<span class="arrow">-></span>
+				<span>Vector</span>
+			</div>
+			<div id="vocabRows" class="flow-rows" aria-live="polite"></div>
+		</section>
+
+		<section class="panel">
+			<h2>Vector Plot (2D)</h2>
+			<svg id="vectorPlot" viewBox="0 0 700 420" role="img" aria-label="2D scatter plot of vocab vectors"></svg>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
