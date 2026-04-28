@@ -125,10 +125,100 @@ body {
 	background: linear-gradient(180deg, #ffffff, #f8f9ff);
 }
 
+.pos-head,
+.pos-row {
+	grid-template-columns: 1fr 40px 3fr;
+}
+
+#positionPlot {
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: linear-gradient(180deg, #ffffff, #f8f9ff);
+}
+
+.embed-form {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+#embedInput {
+	flex: 1;
+	min-width: 220px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	border: 1px solid var(--line);
+	font-size: 0.98rem;
+}
+
+#embedButton {
+	border: 0;
+	border-radius: 999px;
+	background: #ef476f;
+	color: white;
+	padding: 10px 16px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.status-text {
+	margin: 0 0 10px;
+	color: var(--muted);
+}
+
+.embed-rows {
+	max-height: 260px;
+}
+
+.embed-row {
+	grid-template-columns: 0.8fr 28px 1fr 28px 2.4fr;
+}
+
+#embedPlot {
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: linear-gradient(180deg, #ffffff, #fff6fa);
+}
+
+.plot-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+#embedPositionPlot {
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: linear-gradient(180deg, #ffffff, #f5f0ff);
+}
+
+#embedFinalPlot {
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: linear-gradient(180deg, #ffffff, #f0fbff);
+}
+
 @media (max-width: 700px) {
 	.flow-head,
 	.flow-row {
 		grid-template-columns: 1fr 24px 0.8fr 24px 1.2fr;
 		font-size: 0.88rem;
+	}
+
+	.embed-row {
+		grid-template-columns: 0.9fr 20px 1fr 20px 2fr;
+	}
+
+	.plot-container {
+		grid-template-columns: 1fr;
 	}
 }

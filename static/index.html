@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Vocab Explorer</title>
+	<title>Transformer Explorer</title>
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 	<main class="page">
 		<header class="hero">
 			<h1>Vocab Lookup</h1>
-			<p>Tokens map to indices, and indices map to embedding vectors.</p>
+			<p>Tokens map to indices, and positions map to embedding vectors.</p>
 			<button id="refreshButton" type="button">Refresh</button>
 		</header>
 
@@ -27,9 +27,51 @@
 		</section>
 
 		<section class="panel">
-			<h2>Vector Plot (2D)</h2>
+			<h2>Vocab Vector Plot (2D)</h2>
 			<svg id="vectorPlot" viewBox="0 0 700 420" role="img" aria-label="2D scatter plot of vocab vectors"></svg>
 		</section>
+
+		<section class="panel">
+			<h2>Position Lookup Table</h2>
+			<div class="flow-head pos-head">
+				<span>Index</span>
+				<span class="arrow">-></span>
+				<span>Vector</span>
+			</div>
+			<div id="positionRows" class="flow-rows" aria-live="polite"></div>
+		</section>
+
+		<section class="panel">
+			<h2>Position Vector Plot (2D)</h2>
+			<svg id="positionPlot" viewBox="0 0 700 420" role="img" aria-label="2D scatter plot of position vectors"></svg>
+		</section>
+
+		<section class="panel">
+			<h2>Embed Input Text</h2>
+			<form id="embedForm" class="embed-form">
+				<input id="embedInput" type="text" placeholder="Type text to embed" autocomplete="off" />
+				<button id="embedButton" type="submit">Embed Text</button>
+			</form>
+			<p id="embedStatus" class="status-text" aria-live="polite"></p>
+			<div id="embedRows" class="flow-rows embed-rows" aria-live="polite"></div>
+		</section>
+
+		<div class="plot-container">
+			<section class="panel">
+				<h2>Text Embed Plot (Vocab)</h2>
+				<svg id="embedPlot" viewBox="0 0 700 420" role="img" aria-label="2D scatter plot of text character embeddings"></svg>
+			</section>
+
+			<section class="panel">
+				<h2>Text Embed Plot (Position)</h2>
+				<svg id="embedPositionPlot" viewBox="0 0 700 420" role="img" aria-label="2D scatter plot of text position embeddings"></svg>
+			</section>
+
+			<section class="panel">
+				<h2>Text Embed Plot (Final)</h2>
+				<svg id="embedFinalPlot" viewBox="0 0 700 420" role="img" aria-label="2D scatter plot of text final embeddings"></svg>
+			</section>
+		</div>
 	</main>
 
 	<script src="script.js"></script>
