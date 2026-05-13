@@ -74,5 +74,3 @@ def embed_text(text: str):
 
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
-
-
